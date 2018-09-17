@@ -1,0 +1,9 @@
+1 log error
+2 log info
+3 log WARNING
+4 log fatal
+5 log info
+6 log info
+7 log info
+8 log info
+9 log info
