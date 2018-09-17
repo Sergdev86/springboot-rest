@@ -15,7 +15,7 @@ import java.util.stream.Stream;
 @Service
 public class LogService {
 
-//    private String fileResource = "C:\\log.txt";
+//    private String fileResource = "log.txt" at the root of the project;
 private String fileResource = "log.txt";
 
     public Statistic getStatistic(String restParam){
