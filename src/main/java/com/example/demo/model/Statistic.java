@@ -2,9 +2,7 @@ package com.example.demo.model;
 
 import java.util.List;
 
-/**
- * Created by Сергей on 16.09.2018.
- */
+
 public class Statistic {
 
     private List<LogData> results;

@@ -29,11 +29,7 @@ public class LogService {
             lines = getAllLogs();
 
         }catch (IOException e){
-            lines = new ArrayList<>();
-            lines.add("Log file not found!");
-            ArrayList<LogData> resErr = new ArrayList<>();
-            resErr.add(new LogData(1, lines.get(0)));
-            return new Statistic(resErr, resErr.size());
+            return getStatisticWithWarning("Log file not found!");
         }
 
 
@@ -48,6 +44,8 @@ public class LogService {
                 results.add(new LogData(linenumber, value));
             }
         }
+
+        if(results.size() == 0) return getStatisticWithWarning("No matching found!");
 
         //  main object that includes result(logs list) and number of logs
         Statistic statistic = new Statistic(results, results.size());
@@ -70,6 +68,14 @@ public class LogService {
             throw new IOException();
         }
         return lines;
+    }
+
+    private Statistic getStatisticWithWarning(String message){
+        ArrayList<String> lines = new ArrayList<>();
+        lines.add(message);
+        ArrayList<LogData> resErr = new ArrayList<>();
+        resErr.add(new LogData(1, lines.get(0)));
+        return new Statistic(resErr, resErr.size());
     }
 
 }
